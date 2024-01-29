@@ -37,3 +37,5 @@ func main() {
 	}
 	fmt.Println("la somma + alta tra numero è:", maxSum)
 }
+
+// sto esercizio non fa quello che chiedo, tuttavia devo seguire la struttura datami e, in realtà, anche i prof l'han fatto così...
