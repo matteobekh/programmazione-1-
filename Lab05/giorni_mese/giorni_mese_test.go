@@ -3,7 +3,8 @@ In un file giorni_mese.go definire una funzione
 
 	giorniInMese(mese int) int
 
-che, dato come parametro il numero corrispondente a un mese, restituisce il numero di giorni di quel mese (28 per febbraio; 30 per aprile, giugno, settembre, novembre; 31 per G,M,M,L,A,O,D).
+che, dato come parametro il numero corrispondente a un mese, restituisce il numero di giorni di quel mese
+(28 per febbraio; 30 per aprile, giugno, settembre, novembre; 31 per G,M,M,L,A,O,D).
 
 Assumiamo che il numero passato come parametro sia in [1,12], quindi non facciamo controlli.
 
@@ -26,10 +27,6 @@ Se il programma legge
 deve stampare
 
 il mese 11 ha 30 giorni
-
-
-
-
 
 nomefile giorni_mese.go
 */
