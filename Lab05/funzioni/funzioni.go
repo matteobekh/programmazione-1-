@@ -30,7 +30,10 @@ se la stringa letta contiene maiuscole, in che posizione è la prima maiuscola, 
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode"
+)
 
 func hasUpper(s string) bool {
 	for i := 0; i < len(s); i++ {
@@ -61,9 +64,8 @@ func lastUpper(s string) int {
 	return -1
 }
 
-func countDigitsLettersOthers(s string) (int, int, int) {
-	var cifre, lettere, altriCaratteri int
-	for i := 0; i < len(s); i++ {
+func countDigitsLettersOthers(s string) (cifre, lettere, altri int) {
+	/*for i := 0; i < len(s); i++ {
 		if s[i] >= '0' && s[i] <= '9' {
 			cifre++
 		}
@@ -73,19 +75,20 @@ func countDigitsLettersOthers(s string) (int, int, int) {
 			altriCaratteri++
 		}
 	}
-	return cifre, lettere, altriCaratteri
-	/* for indice := 0; indice < l; indice++ {
-			r := rune(s[indice])
-			if unicode.IsDigit(r) {
-				cifre++
-			} else if unicode.IsLetter(r) {
-				lettere++
-			} else {
-				altri++
-			}
+	return cifre, lettere, altriCaratteri */
+	l := len(s)
+	for indice := 0; indice < l; indice++ {
+		r := rune(s[indice])
+		if unicode.IsDigit(r) {
+			cifre++
+		} else if unicode.IsLetter(r) {
+			lettere++
+		} else {
+			altri++
 		}
-		return
-	altra soluzione in realtà molto comoda*/
+	}
+	return
+	/* altra soluzione in realtà molto comoda*/
 }
 
 func isPalindrome(s string) bool {
