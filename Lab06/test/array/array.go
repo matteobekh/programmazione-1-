@@ -47,7 +47,7 @@ func main() {
 	}
 	fmt.Print("array: ", numeri)
 
-	reverse(&numeri)
+	reverse(&numeri) //passo un puntatore, così da poter modificare direttamente lo stesso array, altrimenti modificherei solo una copia dell'array
 	fmt.Print("\nreverse: ", numeri)
 
 	switchFirstLast(&numeri)
