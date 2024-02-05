@@ -75,8 +75,6 @@ func carta(n int) (laCarta Carta, flag bool) {
 	switch valore {
 	case 0:
 		laCarta.valore = "A"
-	case 1:
-		laCarta.valore = "1"
 	case 2:
 		laCarta.valore = "2"
 	case 3:
