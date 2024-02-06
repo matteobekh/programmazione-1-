@@ -115,3 +115,7 @@ func main() {
 	fmt.Println("12.", mySlice, copia)
 
 }
+
+/* idee capite, errori nel dare in input alcune cose che quindi causano il programma a finire in anticipo.
+Secondo me l'errore viene causato dalla chiusura di os.Stdin verso l'inizio e quindi non vengono presi altri
+dati in input (anche a detta di Chat GPT). Però credo di aver capito come funzionano le slice */
