@@ -94,4 +94,25 @@ func main() {
 	}
 }
 
-// non so come stampare in ordine alfabetico
+// preso dalle note del lab 08
+/* // stampa dell'intera mappa
+	fmt.Println(myMap)
+
+  // stampa elemento per elemento, non importa in che ordine
+	for key, value := range myMap {
+		fmt.Println(key, value)
+	}
+
+  // stampa elemento per elemento, in ordine crescente di chiave, chiavi non presenti (con valore zero) incluse
+	for key := min; key <= max; key++ {
+		fmt.Println(key, myMap[key])
+	}
+
+  // stampa elemento per elemento, in ordine crescente di chiave, chiavi non presenti escluse
+
+	for key := min; key <= max; key++ {
+		if value, ok := myMap[key]; ok {
+			fmt.Println(key, value)
+		}
+	}
+*/
