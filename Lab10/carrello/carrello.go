@@ -117,8 +117,7 @@ un metodo String() string
 	"posizione 25, carico 42 (max 50)"
 */
 func (car Carrello) String() string {
-	output := "posizione " + string(car.posizione) + ", carico " + string(car.carico) + " (max " + string(car.caricoMax) + ")"
-	return output
+	return fmt.Sprintf("posizione %d, carico %d (max %d)", car.posizione, car.carico, car.caricoMax)
 }
 
 /*
@@ -130,6 +129,8 @@ una funzione aggiornaStato(c *Carrello, posizione, carico int) bool
 func aggiornaStato(c *Carrello, posizione, carico int) bool {
 	if posizione > 0 && carico > 0 {
 		if carico <= c.caricoMax {
+			c.posizione = posizione
+			c.carico = carico
 			return true
 		}
 	}
@@ -139,12 +140,17 @@ func aggiornaStato(c *Carrello, posizione, carico int) bool {
 func main() {
 
 	//carrello := Carrello{caricoMax: 15, carico: 0, posizione: 0}
-
-	file, err := os.Open(os.Args[1])
-	if err != nil {
+	if len(os.Args) != 2 {
 		fmt.Println("manca nome file")
 		os.Exit(1)
 	}
+	file, err := os.Open(os.Args[1])
+
+	if err != nil {
+		fmt.Println("ERRORE IN APERTURA DI ", os.Args[1])
+		os.Exit(2)
+	}
+
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
@@ -152,7 +158,11 @@ func main() {
 		riga := scanner.Text()
 
 		percorso := strings.Split(riga, "|")
-		fmt.Println(percorso)
+		for i := 0; i < len(percorso); i++ {
+			fmt.Println(i, percorso[i])
+		}
 	}
 
 }
+
+//chiaramente incompleto
